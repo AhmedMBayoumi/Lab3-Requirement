@@ -27,7 +27,7 @@ Retrieves a list of all Samsung devices.
     "price": 649.99
   }
 ]
-
+```
 2. Get a single device by valid ID
 
 GET /devices/{id}
@@ -37,14 +37,14 @@ Retrieves a specific device by its ID.
 Response (valid ID):
 
 json
-
+```
 {
   "id": 1,
   "name": "Samsung Galaxy S21",
   "category": "phone",
   "price": 799.99
 }
-
+```
 3. Get a single device by invalid ID
 
 GET /devices/{id}
@@ -54,11 +54,11 @@ If the device with the specified ID does not exist, the API will return an error
 Response (invalid ID):
 
 json
-
+```
 {
   "error": "Device not found"
 }
-
+```
 4. Create a new device
 
 POST /devices
@@ -68,24 +68,24 @@ Creates a new Samsung device.
 Request Body (JSON):
 
 json
-
+```
 {
   "name": "Samsung Galaxy Tab A8",
   "category": "tablet",
   "price": 299.99
 }
-
+```
 Response:
 
 json
-
+```
 {
   "id": 3,
   "name": "Samsung Galaxy Tab A8",
   "category": "tablet",
   "price": 299.99
 }
-
+```
 5. Create a device with missing fields (invalid input)
 
 POST /devices
@@ -95,19 +95,19 @@ If required fields are missing in the request body, the API will return a valida
 Request Body (Invalid JSON):
 
 json
-
+```
 {
   "name": "Samsung Galaxy Fold"
 }
-
+```
 Response:
 
 json
-
+```
 {
   "error": "Missing required fields: category, price"
 }
-
+```
 6. Update an existing device
 
 PUT /devices/{id}
@@ -117,22 +117,22 @@ Updates the price of an existing device.
 Request Body (JSON):
 
 json
-
+```
 {
   "price": 1099.99
 }
-
+```
 Response:
 
 json
-
+```
 {
   "id": 1,
   "name": "Samsung Galaxy S21",
   "category": "phone",
   "price": 1099.99
 }
-
+```
 7. Delete a device by valid ID
 
 DELETE /devices/{id}
@@ -142,18 +142,16 @@ Deletes a Samsung device by its ID.
 Response:
 
 json
-
+```
 {
   "message": "Device deleted successfully"
 }
-
+```
 Authentication
 
 All endpoints require a Bearer token in the Authorization header for authentication.
 
 Example:
-
-makefile
 
 Authorization: Bearer adminSecretToken
 
@@ -164,11 +162,11 @@ Error Handling
 In case of errors, the API returns a JSON response with an error message:
 
 json
-
+```
 {
   "error": "Unauthorized"
 }
-
+```
 Setup and Running the API
 
     Clone the repository.
