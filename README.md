@@ -172,3 +172,7 @@ Setup and Running the API
     Install the necessary dependencies with:
 
     bash
+URL 
+```
+http://127.0.0.1:5000
+```
