@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  title: Samsung Devices API
+  version: 1.0.0
+  description: API for managing Samsung phones and tablets.
+servers:
+  - url: http://localhost:5000
+paths:
+  /devices:
+    get:
+      summary: Get all devices
+      responses:
+        '200':
+          description: A list of Samsung devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    category:
+                      type: string
+                    price:
+                      type: number
+    post:
+      summary: Add a new device
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: number
+      responses:
+        '201':
+          description: Device created successfully
+  /devices/{id}:
+    get:
+      summary: Get a device by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A single Samsung device
+        '404':
+          description: Device not found
+    put:
+      summary: Update a device by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: number
+      responses:
+        '200':
+          description: Device updated successfully
+        '404':
+          description: Device not found
+    delete:
+      summary: Delete a device by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Device deleted successfully
+        '404':
+          description: Device not found
