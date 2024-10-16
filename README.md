@@ -36,8 +36,7 @@ Retrieves a specific device by its ID.
 
 Response (valid ID):
 
-json
-```
+```json
 {
   "id": 1,
   "name": "Samsung Galaxy S21",
@@ -53,8 +52,8 @@ If the device with the specified ID does not exist, the API will return an error
 
 Response (invalid ID):
 
-json
-```
+```json
+
 {
   "error": "Device not found"
 }
@@ -67,8 +66,8 @@ Creates a new Samsung device.
 
 Request Body (JSON):
 
-json
-```
+```json
+
 {
   "name": "Samsung Galaxy Tab A8",
   "category": "tablet",
@@ -77,8 +76,7 @@ json
 ```
 Response:
 
-json
-```
+```json
 {
   "id": 3,
   "name": "Samsung Galaxy Tab A8",
@@ -94,16 +92,16 @@ If required fields are missing in the request body, the API will return a valida
 
 Request Body (Invalid JSON):
 
-json
-```
+```json
+
 {
   "name": "Samsung Galaxy Fold"
 }
 ```
 Response:
 
-json
-```
+```json
+
 {
   "error": "Missing required fields: category, price"
 }
@@ -116,16 +114,16 @@ Updates the price of an existing device.
 
 Request Body (JSON):
 
-json
-```
+```json
+
 {
   "price": 1099.99
 }
 ```
 Response:
 
-json
-```
+```json
+
 {
   "id": 1,
   "name": "Samsung Galaxy S21",
@@ -141,8 +139,8 @@ Deletes a Samsung device by its ID.
 
 Response:
 
-json
-```
+```json
+
 {
   "message": "Device deleted successfully"
 }
@@ -161,8 +159,8 @@ Error Handling
 
 In case of errors, the API returns a JSON response with an error message:
 
-json
-```
+```json
+
 {
   "error": "Unauthorized"
 }
